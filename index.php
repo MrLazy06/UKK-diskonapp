@@ -6,9 +6,7 @@
     <br>
     <h1>Selamat Datang di DiskonApp</h1>
     <br>
-    <p>Aplikasi perhitungan diskon sederhana menggunakan framework Bootstrap 5 sebagai FrontEnd nya.</p>
-    <p>PHP sebagai BackEnd nya,dibuat oleh Naufal Nur Syuhada Lubis</p>
-    <br>
-</div>
+    <p>Lorem ipsum dolor sit amet, <br> consectetur adipisicing elit. Earum provident dolor fuga quae <br> totam necessitatibus iusto maxime minima <br> nulla velit sapiente rem corporis illo enim <br> unde, porro repellendus assumenda eligendi.</p>
+</div> 
 
 <?php include("includes/footer.php"); ?>
