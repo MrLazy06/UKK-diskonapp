@@ -1,37 +1,99 @@
 # DiskonApp
 
-DiskonApp is a simple web application for managing product discounts. It allows users to add, edit, delete, and view products in a catalog, calculate discounts, and view transaction history.
+DiskonApp is a simple PHP-based web application designed for calculating discounts on items. It features a complete CRUD system for managing a product catalog where each product has a preset discount value. Users can calculate the final price based on the selected product’s price and its associated discount, and all transactions are recorded in a history log.
 
 ## Features
 
-- **Product Catalog**: Add, edit, delete, and view products.
-- **Discount Calculation**: Calculate the discounted price of products.
-- **Transaction History**: View the history of discount calculations.
-- **Responsive Design**: Uses Bootstrap for a responsive and modern UI.
+- **Product Catalog (Katalog):**  
+  - Add, edit, update, and delete catalog items.  
+  - Each product includes a name, price, and discount percentage.
 
+- **Discount Calculation (Hitung Diskon):**  
+  - Select a product from the catalog.
+  - Automatically apply the preset discount.
+  - Display the final price after discount.
+
+- **Transaction History (Riwayat Transaksi):**  
+  - Save each discount calculation as a transaction.
+  - View and manage a history of all discount transactions.
+
+- **Responsive Design:**  
+  - Built with Bootstrap and custom CSS for an attractive and modern look.
+
+## Folder Structure
+
+```
+diskon_app/
+├── config/
+│   └── database.php         # Database connection settings
+├── includes/
+│   ├── header.php           # Header with navbar (common to all pages)
+│   └── footer.php           # Footer (common to all pages)
+├── katalog/
+│   ├── index.php            # List of catalog items (CRUD interface)
+│   ├── tambah.php           # Add new catalog item
+│   ├── edit.php             # Edit existing catalog item
+│   └── hapus.php            # Delete a catalog item
+├── diskon/
+│   ├── hitung.php           # Discount calculation page
+│   ├── riwayat.php          # Transaction history page
+│   └── hapus.php            # Delete a transaction
+├── assets/
+│   └── css/
+│       └── style.css        # Custom CSS styling
+├── index.php                # Home page
+└── db.sql                   # SQL script to create and initialize the database
+```
 
 ## Installation
 
-1. Clone the repository:
-    ```sh
-    git clone https://github.com/yourusername/diskonapp.git
-    ```
-2. Import the database:
-    - Open `phpMyAdmin` and create a new database named `diskonapp`.
-    - Import the `diskonapp.sql` file into the `diskonapp` database.
+1. **Clone or Download the Repository:**  
+   Place the project in your local web server's root directory (e.g., using Laragon, XAMPP, etc.).
 
-3. Configure the database connection:
-    - Update the database configuration in `config/database.php` if necessary.
+2. **Database Setup:**  
+   - Create a database by importing the `db.sql` file.
+   - Update your database credentials in `config/database.php` if necessary.
 
-4. Start the web server:
-    - Place the project in your web server's root directory (e.g., `htdocs` for XAMPP).
-    - Start your web server (e.g., Apache) and navigate to `http://localhost/diskonapp`.
+3. **Run the Application:**  
+   - If using Laragon or XAMPP, access the application by navigating to:  
+     `http://localhost/diskon_app/`
 
 ## Usage
 
-- Navigate to the homepage to see the welcome message.
-- Use the navigation bar to access the product catalog, calculate discounts, and view transaction history.
+1. **Home Page:**  
+   - Access the home page to get an overview of the application.
+
+2. **Manage Catalog:**  
+   - Use the **Katalog** section (accessible via the navbar) to add, edit, or delete catalog items.
+   - Each catalog item includes a name, price, and discount percentage.
+
+3. **Calculate Discount:**  
+   - Navigate to the **Hitung Diskon** page, select a product, and view the calculated price after the discount is applied.
+   - Each calculation is saved as a transaction.
+
+4. **View Transaction History:**  
+   - Check the **Riwayat Transaksi** page to see a list of all discount transactions.
+   - You can also delete individual transactions if needed.
+
+## Customization
+
+- **CSS Styling:**  
+  - Modify the file at `assets/css/style.css` to adjust colors, fonts, or layout as needed.
+  
+- **PHP Logic:**  
+  - The core business logic for the catalog and discount calculation is in the PHP files under the `katalog/` and `diskon/` directories.
+
+## Requirements
+
+- PHP 7.0 or later
+- MySQL or MariaDB
+- Apache web server (or any server supporting PHP)
+- [Bootstrap 5](https://getbootstrap.com/) (included via CDN)
 
 ## License
 
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
+This project is open source and available under the [MIT License](LICENSE).
+
+## Contact
+
+For issues, feature requests, or contributions, please open an issue or submit a pull request on the project's repository.
